@@ -1,6 +1,14 @@
+h1. What is this?
+
+A fork of Hassle with a couple fixes backported from the "jasoncodes branch":https://github.com/jasoncodes/hassle. 
+
+Run hassle even in development mode: https://github.com/jasoncodes/hassle/commit/971f2db580871602f93ce47b5ae1f53898a7fb0d
+Only normalize template_location once: https://github.com/jasoncodes/hassle/commit/b6a359e198c90adf944c39c5f659685235cd46f1
+
+--
 h1. Hassle
 
-Making "SASS":http://sass-lang.com/ less of a hassle on read only filesystems. (like "Heroku":http://heroku.com)
+Making "SASS":http://sass-lang.com/ less of a hassle on read only filesystems like "Heroku":http://heroku.com.
 
 h2. Install
 
@@ -64,13 +72,45 @@ Include this in your views with:
 <link href="/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
 </pre>
 
+You can also set your template location as a hash. This is recommended if you store your sass outside of @public/stylesheets/sass@:
+
+<pre>
+Sass::Plugin.options[:template_location] = {'app/sass' => 'public/stylesheets', 'app/sass/print' => 'public/stylesheets/dead_trees'}
+</pre>
+
+And after Hassle runs...
+
+<pre>
+$ tree
+.
+|-- config.ru
+|-- app
+|   `-- sass
+|       `-- main
+|           `-- screen.sass
+|       `-- print
+|           `__ black_and_white.sass
+`-- tmp
+    `-- hassle
+        `-- main
+            `-- screen.css
+        `-- dead_trees
+            `__ black_and_white.sass
+</pre>
+
+Include this in your views with:
+
+<pre>
+<link href="/main/screen.css" media="screen" rel="stylesheet" type="text/css" />
+</pre>
+
 h2. Integration
 
 Here's how to integrate it with your favorite web framework:
 
 h3. Rails
 
-For Rails: @script/plugin install git://github.com/pedro/hassle@. Done. Once you're in production mode, Hassle will kick in and prepare your SASS for all to enjoy.
+For Rails: @script/plugin install git://github.com/pedro/hassle@. Done. Hassle will kick in and prepare your SASS for all to enjoy.
 
 h3. Sinatra
 
