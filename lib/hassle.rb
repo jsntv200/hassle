@@ -1,7 +1,6 @@
 require 'rack'
 require 'sass'
 require 'sass/plugin'
-require 'hassle/action_view'
 
 class Hassle
   def initialize(app)
