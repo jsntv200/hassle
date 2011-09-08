@@ -30,7 +30,7 @@ begin
     gem.description = "Makes SASS less of a hassle on read-only filesystems by compiling and serving it up for you."
     gem.homepage = "http://github.com/pedro/hassle"
     gem.authors = ["Pedro Belo", "Nick Quaranto"]
-    gem.files = FileList["LICENSE", "README.textile", "lib/hassle.rb", "init.rb"]
+    gem.files = FileList["LICENSE", "README.textile", "lib/hassle.rb", "rails/init.rb"]
     gem.add_dependency('rack')
     gem.add_dependency('haml')
     gem.add_development_dependency('rspec')

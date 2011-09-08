@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.files = [
     "LICENSE",
      "README.textile",
-     "init.rb",
+     "rails/init.rb",
      "lib/hassle.rb"
   ]
   s.homepage = %q{http://github.com/pedro/hassle}
