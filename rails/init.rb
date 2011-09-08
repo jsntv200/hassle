@@ -1,1 +1,4 @@
-ActionController::Dispatcher.middleware.use Hassle
+
+if Rails.env.production?
+  ActionController::Dispatcher.middleware.use Hassle
+end
