@@ -5,16 +5,18 @@ A fork of Hassle with a couple fixes backported from the "jasoncodes branch":htt
 Run hassle even in development mode: https://github.com/jasoncodes/hassle/commit/971f2db580871602f93ce47b5ae1f53898a7fb0d
 Only normalize template_location once: https://github.com/jasoncodes/hassle/commit/b6a359e198c90adf944c39c5f659685235cd46f1
 
+This version works as a Gem for use with Rails v2.3.x
+
 h2. Hassle
 
 Making "SASS":http://sass-lang.com/ less of a hassle on read only filesystems like "Heroku":http://heroku.com.
 
 h2. Install
 
-Get it from "Gemcutter.":http://gemcutter.org
+Add Hassle to your Gemfile
 
 <pre>
-gem install hassle -s http://gemcutter.org
+gem "hassle", :git => "git://github.com/jsntv200/hassle.git"
 </pre>
 
 h2. Usage
