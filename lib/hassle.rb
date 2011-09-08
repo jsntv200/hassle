@@ -49,7 +49,8 @@ class Hassle::Compiler
 
   def prepare
     options.merge!(:cache        => false,
-                   :never_update => false)
+                   :never_update => false,
+                   :quiet        => true)
 
     options[:template_location].to_a.each do |location|
       FileUtils.mkdir_p(location.last)
